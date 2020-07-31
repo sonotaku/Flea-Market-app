@@ -49,11 +49,11 @@
 
 | Column        | Type    | Options                        |
 | ------------- | ------- | ------------------------------ |
-|postal         | integer | null: false                    |
+|postal         | string  | null: false                    |
 | place         | string  | null: false                    |
 | address       | string  | null: false                    |
 |building       | string  |                                |
-| phone         | integer | null: false                    |
+| phone         | string  | null: false                    |
 | order_item_id | integer | null: false, foreign_key: true |
 
  ### Association

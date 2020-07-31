@@ -21,7 +21,7 @@
 
 | Column      | Type       | Options                        |
 | ----------- | ---------- | ------------------------------ |
-| user_id     | references | null: false, foreign_key: true |
+| user_id     | integer    | null: false, foreign_key: true |
 | image       | string     |null: false                     |
 | name        | string     | null: false                    |
 | description | text       | null: false                    |
@@ -39,10 +39,10 @@
 
 ## order_items テーブル
 
-| Column  | Type       | Options                        |
-| ------- | ---------- | ------------------------------ |
-| item_id | references | null: false, foreign_key: true |
-| user_id | references | null: false, foreign_key: true |
+| Column  | Type    | Options                        |
+| ------- | ------- | ------------------------------ |
+| item_id | integer | null: false, foreign_key: true |
+| user_id | integer | null: false, foreign_key: true |
 
 ### Association
 
@@ -52,14 +52,14 @@
 
 ## orders テーブル
 
-| Column        | Type       | Options                        |
-| ------------- | ---------- | ------------------------------ |
-|postal         | integer    | null: false                    |
-| place         | string     | null: false                    |
-| address       | string     | null: false                    |
-|building       | string     |                                |
-| phone         | integer    | null: false                    |
-| order_item_id | references | null: false, foreign_key: true |
+| Column        | Type    | Options                        |
+| ------------- | ------- | ------------------------------ |
+|postal         | integer | null: false                    |
+| place         | string  | null: false                    |
+| address       | string  | null: false                    |
+|building       | string  |                                |
+| phone         | integer | null: false                    |
+| order_item_id | integer | null: false, foreign_key: true |
 
  ### Association
 

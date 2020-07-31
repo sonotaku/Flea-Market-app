@@ -17,16 +17,6 @@
 - has_many :items
 - has_many :order_items
 
-## auth_informations テーブル
-
-| Column  | Type       | Options                        |
-| ------  | ---------- | ------------------------------ |
-| email   | integer    | null: false                    |
-| user_id | references | null: false, foreign_key: true |
-
-### Association
-- belongs_to :user
-
 ## items テーブル
 
 | Column      | Type       | Options                        |

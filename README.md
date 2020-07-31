@@ -31,6 +31,7 @@
 
 - has_many :order_items
 - belongs_to :user
+- has_one :addresses
 
 ## order_items テーブル
 
@@ -58,5 +59,5 @@
 
  ### Association
 
- - belongs_to :order_item
  - belongs_to :user
+ - belongs_to :item

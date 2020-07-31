@@ -10,10 +10,6 @@
 | flat_family_name | string   | null: false |
 | flat_first_name  | string   | null: false |
 | birthday         | date     | null: false |
-| card_number      | integer  | null: false |
-| card_day         | date     | null: false |
-| card_secure      | integer  | null: false |
-
 
 ### Association
 - has_many :items

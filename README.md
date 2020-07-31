@@ -43,7 +43,6 @@
 
 - belongs_to :user
 - belongs_to :item
-- has_one :orders
 
 ## addresses テーブル
 

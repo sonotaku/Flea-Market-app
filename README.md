@@ -2,19 +2,20 @@
 
 ## users テーブル
 
-| Column           | Type     | Options     |
-| ---------------- | -------- | ----------- |
-| nickname         | string   | null: false |
-| family_name      | string   | null: false |
-| first_name       | string   | null: false |
-| flat_family_name | string   | null: false |
-| flat_first_name  | string   | null: false |
-| birthday         | date     | null: false |
+| Column           | Type       | Options    |
+| ---------------- | ---------- | ----------- |
+| nickname         | string     | null: false |
+| family_name      | string     | null: false |
+| first_name       | string     | null: false |
+| flat_family_name | string     | null: false |
+| flat_first_name  | string     | null: false |
+| birthday         | date       | null: false |
+| email            | integer    | null: false |
+| password         | integer    | null: false | 
 
 ### Association
 - has_many :items
 - has_many :order_items
-- has_one :auth_informations
 
 ## auth_informations テーブル
 

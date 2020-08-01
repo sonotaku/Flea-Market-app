@@ -25,6 +25,11 @@
 | image       | string     |null: false                     |
 | name        | string     | null: false                    |
 | description | text       | null: false                    |
+| category    | string     | null: false                    |
+| condition   | string     | null: false                    |
+| burden      | string     | null: false                    |
+| from        | string     | null: false                    |
+| day         | datetime   | null: false                    |
 | price       | integer    | null: false                    |
 
 ### Association

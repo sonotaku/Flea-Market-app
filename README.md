@@ -33,7 +33,7 @@
 
 - has_many :order_items
 - belongs_to :user
-- has_one :addresses
+- has_one :address
 
 ## order_items テーブル
 

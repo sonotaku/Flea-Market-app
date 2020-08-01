@@ -19,15 +19,19 @@
 
 ## items テーブル
 
-| Column      | Type       | Options                        |
-| ----------- | ---------- | ------------------------------ |
-| user_id     | integer    | null: false, foreign_key: true |
-| image       | string     |null: false                     |
-| name        | string     | null: false                    |
-| description | text       | null: false                    |
-| price       | integer    | null: false                    |
-| commission  | integer    | null: false                    |
-| profit      | integer    | null: false                    |
+| Column        | Type       | Options                        |
+| ------------- | ---------- | ------------------------------ |
+| user_id       | integer    | null: false, foreign_key: true |
+| image         | string     | null: false                    |
+| name          | string     | null: false                    |
+| description   | text       | null: false                    |
+| category_id   | integer    | null: false                    |
+| condition_id  | integer    | null: false                    |
+| burden_id     | integer    | null: false                    |
+| prefecture_id | integer    | null: false                    |
+| day_id        | integer    | null: false                    |
+| price         | integer    | null: false                    |
+
 
 ### Association
 
@@ -51,8 +55,8 @@
 
 | Column        | Type    | Options                        |
 | ------------- | ------- | ------------------------------ |
-| postal        | string  | null: false                    |
-| prefecture    | string  | null: false                    |
+| postal_id     | integer | null: false                    |
+| prefecture_id | integer | null: false                    |
 | address       | string  | null: false                    |
 | building      | string  |                                |
 | phone         | string  | null: false                    |

@@ -21,7 +21,7 @@
 
 | Column        | Type       | Options                        |
 | ------------- | ---------- | ------------------------------ |
-| user_id       | integer    | null: false, foreign_key: true |
+| user          | references | null: false, foreign_key: true |
 | image         | string     | null: false                    |
 | name          | string     | null: false                    |
 | description   | text       | null: false                    |
@@ -43,8 +43,8 @@
 
 | Column  | Type    | Options                        |
 | ------- | ------- | ------------------------------ |
-| item_id | integer | null: false, foreign_key: true |
-| user_id | integer | null: false, foreign_key: true |
+| item    | references | null: false, foreign_key: true |
+| user    | references | null: false, foreign_key: true |
 
 ### Association
 
@@ -53,14 +53,14 @@
 
 ## addresses テーブル
 
-| Column        | Type    | Options                        |
-| ------------- | ------- | ------------------------------ |
-| postal_id     | integer | null: false                    |
-| prefecture_id | integer | null: false                    |
-| address       | string  | null: false                    |
-| building      | string  |                                |
-| phone         | string  | null: false                    |
-| item_id       | integer | null: false, foreign_key: true |
+| Column        | Type       | Options                        |
+| ------------- | ---------- | ------------------------------ |
+| postal_id     | integer    | null: false                    |
+| prefecture_id | integer    | null: false                    |
+| address       | string     | null: false                    |
+| building      | string     |                                |
+| phone         | string     | null: false                    |
+| item          | references | null: false, foreign_key: true |
 
  ### Association
 

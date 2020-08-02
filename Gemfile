@@ -60,4 +60,3 @@ end
 
 gem 'active_hash'
 # deviseの追加
-gem 'devise'

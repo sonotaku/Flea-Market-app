@@ -57,6 +57,7 @@
 | ------------- | ---------- | ------------------------------ |
 | postal_id     | string     | null: false                    |
 | prefecture_id | integer    | null: false                    |
+| city          | string     | null: false                    |
 | address       | string     | null: false                    |
 | building      | string     |                                |
 | phone         | string     | null: false                    |

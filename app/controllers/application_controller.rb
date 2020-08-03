@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
   # 他のカラムをDBに保存できるように設定
   before_action :configure_permitted_parameters, if: :devise_controller?
 
-  protected  # 自分のクラス内、もしくはその継承先でアクセス可能
+  protected # 自分のクラス内、もしくはその継承先でアクセス可能
 
   # devise_parameter_sanitizerメソッドはdeviseでユーザー登録をする場合に使用でき、「特定のカラムを許容する」メソッド
   def configure_permitted_parameters
@@ -19,6 +19,4 @@ class ApplicationController < ActionController::Base
       username == ENV['BASIC_AUTH_USER'] && password == ENV['BASIC_AUTH_PASSWORD']
     end
   end
-
- 
 end

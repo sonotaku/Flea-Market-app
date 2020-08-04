@@ -8,7 +8,7 @@ class ApplicationController < ActionController::Base
 
   # devise_parameter_sanitizerメソッドはdeviseでユーザー登録をする場合に使用でき、「特定のカラムを許容する」メソッド
   def configure_permitted_parameters
-    devise_parameter_sanitizer.permit(:sigh_up, keys: [:nickname, :family_name, :first_name, :flat_family_name, :flat_first_name, :birthday])
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:nickname, :family_name, :first_name, :flat_family_name, :flat_first_name, :birthday])
   end
 
   private # 自分のクラス内のみアクセス可能、継承先ではできない

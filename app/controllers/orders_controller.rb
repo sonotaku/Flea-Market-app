@@ -2,10 +2,11 @@ class OrdersController < ApplicationController
   before_action :move_to_index, except: [:index]
 
   def index
+    @items = Item.all
   end
 
   def new
-    @user = User.new
+    @item = Item.new
   end
 
   private

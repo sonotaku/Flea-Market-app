@@ -8,7 +8,7 @@ class User < ApplicationRecord
   validates :email, presence: true, uniqueness: true, format: { with: /@/ }
   # ６文字以上かつ半角英数字混合かつ２回入力
   PASSWORD_REGEX = /\A(?=.*?[a-z])(?=.*?[\d])[a-z\d]+\z/i.freeze
-  validates_format_of :password, presence: true, length: { minimum: 6 }, with: PASSWORD_REGEX
+  validates_format_of :password, presence: true, with: PASSWORD_REGEX
   # 全角のみ（ひらがな、カタカナ、漢字）
   validates :family_name, presence: true, format: { with: /\A[ぁ-んァ-ンー-龥]/ }
   validates :first_name, presence: true, format: { with: /\A[ぁ-んァ-ンー-龥]/ }

@@ -10,10 +10,10 @@ class User < ApplicationRecord
   PASSWORD_REGEX = /\A(?=.*?[a-z])(?=.*?[\d])[a-z\d]+\z/i.freeze
   validates_format_of :password, presence: true, length: { minimum: 6 }, with: PASSWORD_REGEX
   # 全角のみ（ひらがな、カタカナ、漢字）
-  validates :family_name, presence: true, format: { with: /\A[ぁ-んァ-ンー-龥]+\z/ }
-  validates :first_name, presence: true, format: { with: /\A[ぁ-んァ-ンー-龥]+\z/ }
-  # 全角カナのみ
-  validates :flat_family_name, presence: true, format: { with: /\A[ァ-ンー-]+\z/ }
-  validates :flat_first_name, presence: true, format: { with: /\A[ァ-ンー-]+\z/ }
+  validates :family_name, presence: true, format: { with: /\A[ぁ-んァ-ンー-龥]/ }
+  validates :first_name, presence: true, format: { with: /\A[ぁ-んァ-ンー-龥]/ }
+  # 全角カタカナのみ
+  validates :flat_family_name, presence: true, format: { with: /\A[ァ-ヶー－]+\z/ }
+  validates :flat_first_name, presence: true, format: { with: /\A[ァ-ヶー－]+\z/ }
   validates :birthday, presence: true
 end

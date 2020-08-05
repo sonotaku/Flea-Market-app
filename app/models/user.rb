@@ -4,7 +4,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 # presence trueをまとめて記述
-  with_options presence: ture do
+  with_options presence: true do
     
     validates :nickname
     validates :email, uniqueness: true, format: { with: /@/ }

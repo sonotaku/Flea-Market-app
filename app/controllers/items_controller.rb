@@ -1,4 +1,4 @@
-class OrdersController < ApplicationController
+class ItemsController < ApplicationController
 
   def index
     @items = Item.all
@@ -26,14 +26,15 @@ class OrdersController < ApplicationController
   
   def item_params
     params.require(:item).permit(
-      :image, 
+      :image,
       :name, 
       :description, 
       :category_id, 
       :condition_id, 
       :burden_id, 
-      :prefecture_id, 
+      :prefecture_id,
       :day_id, 
-      :price).merge(user: current_user.id)
+      :price
+      ).merge(user_id: current_user.id)
   end
 end

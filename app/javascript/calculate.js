@@ -15,8 +15,8 @@ function calculate(){
       add_tax_price.appendChild(tax);
       profit_price.appendChild(profit);
     } else {
-      ('add-tax-price').appendChild("--");
-      ('profit').appendChild("--");
+      ('add-tax-price').appendChild("NAN");
+      ('profit').appendChild("NAN");
     }
   });
 }

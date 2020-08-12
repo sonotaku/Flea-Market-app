@@ -22,6 +22,13 @@ class ItemsController < ApplicationController
     end
   end
 
+  # def calculate
+  #   item = Item.price.find(params(:id))
+  #   item.update
+  #   price = Item.price(params[:id])
+  #   render json: { item: price }
+  # end
+
   private
   
   def item_params

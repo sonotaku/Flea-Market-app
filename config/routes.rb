@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
-  root to: 'orders#index'
+  root to: 'items#index'
 
-  resources :orders
-  # get 'orders/new', to: 'orders#calculate'
+  resources :items  #, only: [:index, :new, :create]
+  # get 'items/:id', to: 'items#calculate'
 end

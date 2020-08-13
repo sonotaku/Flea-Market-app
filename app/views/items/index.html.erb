@@ -132,14 +132,19 @@
         <% @items.each do |item| %>
           <li class='list'>
             <%= link_to "item_path(item.id)" do %>
+            <%= link_to "/items/:id" do %>
               <div class='item-img-content'>
                 <%= image_tag item.image, class: "item-img" %>
 
-                <%# 商品が売れていればsold outの表示 %>
+                <%# 商品が売れていればsold outの表示 %> 
+
+                <%# 購入の際に、購入者のID(current_user.id)が商品に登録されるように設定する前提,  (order_id: current_user.id) %>
+                
+                <%# if item.order_id.present?%>       <%# 購入者idが存在したら%>
                 <%# <div class='sold-out'>
                   <span>Sold Out!!</span>
-                </div> %>
-                <%# //商品が売れていればsold outの表示 %>
+                </div>  %>
+                <%# 商品が売れていればsold outの表示%>
 
               </div>
               <div class='item-info'>

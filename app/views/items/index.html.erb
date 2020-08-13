@@ -128,17 +128,21 @@
 
       <%# 商品のインスタンス変数になにか入っている場合、中身のすべてを展開できるようにしましょう %>
       <% if @items.present? %>
-      <%# if @items.image.attached? %>
         <% @items.each do |item| %>
           <li class='list'>
-            <%= link_to "item_path(item.id)" do %>
+            <%= link_to "item_path(params[:id])" do %>
               <div class='item-img-content'>
                 <%= image_tag item.image, class: "item-img" %>
 
                 <%# 商品が売れていればsold outの表示 %>
-                <%# <div class='sold-out'>
+
+                <%# 購入の際に、購入者のID(current_user.id)が商品に登録されるように設定する前提,  (order_id: current_user.id)
+                
+                <%# if item.order_id.present? %>
+                <div class='sold-out'>
                   <span>Sold Out!!</span>
-                </div> %>
+                </div>
+                <%# end %>
                 <%# //商品が売れていればsold outの表示 %>
 
               </div>

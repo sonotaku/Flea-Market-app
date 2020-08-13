@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
-  root to: 'orders#index'
+  root to: 'items#index'
 
-  # resources :orders
+  resources :items 
+  # get 'items', to: 'items#calculate'
 end

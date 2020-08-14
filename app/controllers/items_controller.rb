@@ -1,5 +1,5 @@
 class ItemsController < ApplicationController
-
+  before_action :set_item, only: [:show, :edit]
   def index
     @items = Item.all
   end
@@ -23,11 +23,9 @@ class ItemsController < ApplicationController
   end
   
   def show
-    @item = Item.find(params[:id])
   end
 
   def edit
-    @item = Item.find(params[:id])
   end
 
   def update
@@ -55,5 +53,9 @@ class ItemsController < ApplicationController
       :day_id, 
       :price
       ).merge(user_id: current_user.id)
+  end
+
+  def set_item
+    @item = Item.find(params[:id])
   end
 end

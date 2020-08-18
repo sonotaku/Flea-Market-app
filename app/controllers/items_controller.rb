@@ -7,7 +7,6 @@ class ItemsController < ApplicationController
   def new
     if user_signed_in?
       @item = Item.new
-      # @item.image.new
     else
       redirect_to root_path
     end
@@ -47,10 +46,6 @@ class ItemsController < ApplicationController
       render :show
     end
   end
-
-  def 
-    
-  end  
 
   private
   

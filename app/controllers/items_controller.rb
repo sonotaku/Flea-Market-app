@@ -47,7 +47,10 @@ class ItemsController < ApplicationController
       render :show
     end
   end
-  
+
+  def 
+    
+  end  
 
   private
   

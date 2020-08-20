@@ -2,6 +2,10 @@ Rails.application.routes.draw do
   devise_for :users
   root to: 'items#index'
 
-  resources :items
-  # get 'items', to: 'items#calculate'
+  resources :items do
+    member do
+      get 'transactions'
+      post 'purchase'
+    end
+  end
 end

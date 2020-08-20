@@ -25,12 +25,5 @@ function calculate(){
     }
     e.preventDefault();
   });
-
-
-
 }
 window.addEventListener("load", calculate);
-
-
-
-rrrrrrrrrrrr

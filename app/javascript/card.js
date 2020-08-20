@@ -2,7 +2,7 @@ const pay = () => {
   Payjp.setPublicKey(process.env.PAYJP_PUBLIC_KEY);   // テスト公開鍵を貼り付け、PAY.JPを読みこむ
   // フォームの情報を取得
   const form = document.getElementById('charge-form');
-  // イベントの開始！
+  // 送信されたらイベント開始！
   form.addEventListener("submit", (e) => {
     e.preventDefault();    //フォーム送信処理をキャンセルする
 
@@ -17,6 +17,7 @@ const pay = () => {
       exp_year: `20${formData.get("exp_year")}`,
     };
 
+        // トークン作成
     Payjp.createToken(card, (status, response) => {
       if (status === 200) {
         // 生成されたトークンを変数tokenに代入する
@@ -38,10 +39,11 @@ const pay = () => {
         document.getElementById("charge-form").submit();
         // フォームの入力内容をリセットする
         document.getElementById("charge-form").reset();
+        alert("購入が完了しました")
       } else {
+        alert("購入に失敗しました");
       }
     });
   });
 };
-
 window.addEventListener("load", pay);

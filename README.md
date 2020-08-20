@@ -31,6 +31,7 @@
 | prefecture_id | integer    | null: false                    |
 | day_id        | integer    | null: false                    |
 | price         | integer    | null: false                    |
+| purchaser_id  | integer    |                                |
 
 
 ### Association
@@ -62,7 +63,6 @@
 | building      | string     |                                |
 | phone         | string     | null: false                    |
 | user          | references | null: false, foreign_key: true |
-| buyer_id      | integer    |                                |
  ### Association
 
  - belongs_to :user

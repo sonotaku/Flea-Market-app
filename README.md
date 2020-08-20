@@ -15,7 +15,7 @@
 
 ### Association
 - has_many :items
-- has_many :order_items
+- has_many :purchase_items
 
 ## items テーブル
 
@@ -35,11 +35,11 @@
 
 ### Association
 
-- has_many :order_items
+- has_many :purchase_items
 - belongs_to :user
 - has_one :address
 
-## order_items テーブル
+## purchase_items テーブル
 
 | Column  | Type    | Options                        |
 | ------- | ------- | ------------------------------ |
@@ -61,8 +61,8 @@
 | address       | string     | null: false                    |
 | building      | string     |                                |
 | phone         | string     | null: false                    |
-| item          | references | null: false, foreign_key: true |
+| user          | references | null: false, foreign_key: true |
 
  ### Association
 
- - belongs_to :item
+ - belongs_to :user

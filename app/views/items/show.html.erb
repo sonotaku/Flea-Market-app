@@ -34,7 +34,7 @@
     <%# 購入者のidが存在しなかったら表示する %>
     <%# unless item.order_id.present? %>
 
-    <%= link_to '購入画面に進む', "#" ,class:"item-red-btn"%>
+    <%= link_to '購入画面に進む',  transactions_item_path(@item.id) ,class:"item-red-btn"%>
 
     <%# end %>
     <%# //商品が売れていない場合はこちらを表示しましょう %>

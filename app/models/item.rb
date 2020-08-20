@@ -5,8 +5,11 @@ class Item < ApplicationRecord
   belongs_to_active_hash :burden
   belongs_to_active_hash :prefecture
   belongs_to_active_hash :day
+  
   belongs_to :user
   has_one_attached :image
+  has_one :address
+  has_many :purchase_items
   
   with_options presence: true do
     validates :image

@@ -5,6 +5,8 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :items
+  has_many :purchase_items
+  has_one :address
 # presence trueをまとめて記述
   with_options presence: true do
     

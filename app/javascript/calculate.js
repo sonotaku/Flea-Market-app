@@ -5,10 +5,8 @@ function calculate(){
 
 
   // item_priceに入力されたらイベント開始
-
-
-
   item_price.addEventListener("change", (e) => {
+    e.preventDefault();
     // 価格の値を取得する
     const input_price = document.getElementById('item_price').value;
     // 出力する場所の定義
@@ -23,7 +21,6 @@ function calculate(){
       add_tax_price.append("NAN");
       profit_price.append("NAN");
     }
-    e.preventDefault();
   });
 }
 window.addEventListener("load", calculate);

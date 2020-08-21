@@ -4,7 +4,8 @@ const pay = () => {
   const form = document.getElementById('charge-form');
   // 送信されたらイベント開始！
   form.addEventListener("submit", (e) => {
-    e.preventDefault();    //フォーム送信処理をキャンセルする
+    //フォーム送信処理をキャンセルする
+    e.preventDefault();
 
     const formResult = document.getElementById("charge-form");
     const formData = new FormData(formResult);
@@ -14,8 +15,9 @@ const pay = () => {
       number: formData.get("number"),
       cvc: formData.get("cvc"),
       exp_month: formData.get("exp_month"),
-      exp_year: `20${formData.get("exp_year")}`,
+      exp_year: `20${formData.get("exp_year")}`
     };
+
 
         // トークン作成
     Payjp.createToken(card, (status, response) => {
@@ -27,7 +29,7 @@ const pay = () => {
         // 生成するHTMLを定義する
         const tokenObj = `<input value=${token} type="hidden" name='token'>`;
         // フォームの最後にHTMLを生成、挿入する
-        renderDom.insertAdjacentElement("beforeend", tokenObj);
+        renderDom.insertAdjacentHTML("beforeend", tokenObj);
 
         // 入力された情報（カード）の値を削除する
         document.getElementById("number").removeAttribute("name");
@@ -41,7 +43,6 @@ const pay = () => {
         document.getElementById("charge-form").reset();
         alert("購入が完了しました")
       } else {
-        alert("購入に失敗しました");
       }
     });
   });

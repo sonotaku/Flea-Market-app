@@ -8,11 +8,13 @@
     </h2>
     <div class='item-img-content'>
       <%= image_tag @item.image ,class:"item-box-img" %>
-      <%# 商品が売れている場合は、sould outの表示をしましょう。 %>
+      <%# addressに購入者id(purchase_item_id)が存在すればsold outの表示 %>
+      <% if @item.buyer_id.present? %>
       <div class='sold-out'>
         <span>Sold Out!!</span>
       </div>
-      <%# //商品が売れている場合は、sould outの表示をしましょう。 %>
+      <% end %>
+      <%# addressに購入者id(purchase_item_id)が存在すればsold outの表示 %>
     </div>
     <div class="item-price-box">
       <span class="item-price">
@@ -23,23 +25,21 @@
       </span>
     </div>
 
-    <%# ログインしていて、なおかつ、ログインしているユーザと出品しているユーザが同一人物でないとき表示しましょう。 %>
-    <% if user_signed_in? && current_user.id == @item.user_id %>
-      <%= link_to '商品の編集', edit_item_path(@item.id), method: :get, class: "item-red-btn" %>
-      <p class='or-text'>or</p>
-      <%= link_to '削除', item_path(@item.id), method: :delete, class:'item-destroy' %>
+    <%# ログインしているとき表示 %>
+    <% if user_signed_in? %>
+      <%# ログインしてるユーザーが出品者のとき表示 %>
+      <% if current_user.id == @item.user_id %>
+        <%= link_to '商品の編集', edit_item_path(@item.id), method: :get, class: "item-red-btn" %>
+        <p class='or-text'>or</p>
+        <%= link_to '削除', item_path(@item.id), method: :delete, class:'item-destroy' %>
+      <% end %>
+
+      <%# 商品が売れていない場合に表示 %>
+      <%# ログインしてるユーザーが出品者ではない、かつ購入者のidが存在しなかったら表示する %>
+      <% unless current_user.id == @item.user_id && @item.buyer_id.present? %>
+        <%= link_to '購入画面に進む', item_purchase_items_path(@item.id) ,class:"item-red-btn"%>
+      <% end %>
     <% end %>
-
-    <%# 商品が売れていない場合はこちらを表示しましょう %>
-    <%# 購入者のidが存在しなかったら表示する %>
-    <%# unless item.order_id.present? %>
-
-    <%= link_to '購入画面に進む',  transactions_item_path(@item.id) ,class:"item-red-btn"%>
-
-    <%# end %>
-    <%# //商品が売れていない場合はこちらを表示しましょう %>
-
-    <%# //ログインしていて、なおかつ、ログインしているユーザと出品しているユーザが同一人物でないとき表示しましょう。 %>
 
     <div class="item-explain-box">
       <span><%= @item.description %></span>

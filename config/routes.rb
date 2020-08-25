@@ -3,9 +3,10 @@ Rails.application.routes.draw do
   root to: 'items#index'
 
   resources :items do
-    member do
-      get 'transactions'
-      post 'purchase'
-    end
+    resources :purchase_items, only: [:index, :create]
   end
+
+  # resources :items
+  # resources :purchase_items, only: [:index, :create]
+
 end

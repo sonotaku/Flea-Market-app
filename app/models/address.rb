@@ -1,12 +1,3 @@
 class Address < ApplicationRecord
-  belongs_to :user
-
-  with_options presence: true do
-    validates :postal_number, format: { with: /\A\d{3}[-]\d{4}\z/ }   # ハイフン必須かつ７桁
-    validates :prefecture_id, numericality: { other_than: 0 }   # 0より大きいもの
-    validates :city
-    validates :address
-    validates :phone, format: { with: /\A\d{11}\z/}  # ハイフンなし、11文字以内
-    validates :item
-  end
+  belongs_to :purchase_item
 end

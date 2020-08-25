@@ -8,7 +8,6 @@ class Item < ApplicationRecord
   
   belongs_to :user
   has_one_attached :image
-  has_one :address
   has_many :purchase_items
   
   with_options presence: true do

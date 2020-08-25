@@ -6,7 +6,6 @@ class User < ApplicationRecord
 
   has_many :items
   has_many :purchase_items
-  has_one :address
 # presence trueをまとめて記述
   with_options presence: true do
     

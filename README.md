@@ -15,7 +15,7 @@
 
 ### Association
 - has_many :items
-- has_many :order_items
+- has_many :purchase_items
 
 ## items テーブル
 
@@ -31,15 +31,15 @@
 | prefecture_id | integer    | null: false                    |
 | day_id        | integer    | null: false                    |
 | price         | integer    | null: false                    |
+| purchaser_id  | integer    |                                |
 
 
 ### Association
 
-- has_many :order_items
+- has_many :purchase_items
 - belongs_to :user
-- has_one :address
 
-## order_items テーブル
+## purchase_items テーブル
 
 | Column  | Type    | Options                        |
 | ------- | ------- | ------------------------------ |
@@ -50,19 +50,19 @@
 
 - belongs_to :user
 - belongs_to :item
+- has_one :purchase_item
 
 ## addresses テーブル
 
-| Column        | Type       | Options                        |
-| ------------- | ---------- | ------------------------------ |
-| postal_number | string     | null: false                    |
-| prefecture_id | integer    | null: false                    |
-| city          | string     | null: false                    |
-| address       | string     | null: false                    |
-| building      | string     |                                |
-| phone         | string     | null: false                    |
-| item          | references | null: false, foreign_key: true |
-
+| Column           | Type       | Options                        |
+| ---------------- | ---------- | ------------------------------ |
+| postal_number    | string     | null: false                    |
+| prefecture_id    | integer    | null: false                    |
+| city             | string     | null: false                    |
+| address          | string     | null: false                    |
+| building         | string     |                                |
+| phone            | string     | null: false                    |
+| purchase_item_id | references | null: false, foreign_key: true |
  ### Association
 
- - belongs_to :item
+ - belongs_to :purchase_item

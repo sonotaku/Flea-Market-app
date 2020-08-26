@@ -1,5 +1,8 @@
 class ItemsController < ApplicationController
+  require 'payjp'
   before_action :set_item, only: [:show, :edit]
+
+
   def index
     @items = Item.all
   end
@@ -7,7 +10,6 @@ class ItemsController < ApplicationController
   def new
     if user_signed_in?
       @item = Item.new
-      # @item.image.new
     else
       redirect_to root_path
     end
@@ -47,7 +49,6 @@ class ItemsController < ApplicationController
       render :show
     end
   end
-  
 
   private
   

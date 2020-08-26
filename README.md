@@ -31,7 +31,7 @@
 | prefecture_id | integer    | null: false                    |
 | day_id        | integer    | null: false                    |
 | price         | integer    | null: false                    |
-| purchaser_id  | integer    |                                |
+| buyer_id      | integer    |                                |
 
 
 ### Association

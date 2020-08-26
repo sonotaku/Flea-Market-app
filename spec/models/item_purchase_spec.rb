@@ -20,7 +20,7 @@ RSpec.describe ItemPurchase, type: :model do
       it "郵便番号がないと購入できない" do
         @item_purchase.postal_number = nil
         @item_purchase.valid?
-        expect(@item_purchase.errors.full_messages).to include("Postal number can't be blank", "Postal number is invalid")
+        expect(@item_purchase.errors.full_messages).to include("Postal number is invalid")
       end
       it "郵便番号にハイフンがないと購入できない" do
         @item_purchase.postal_number = "1234567"
@@ -50,7 +50,7 @@ RSpec.describe ItemPurchase, type: :model do
       it "電話番号がないと購入できない" do
         @item_purchase.phone = nil
         @item_purchase.valid?
-        expect(@item_purchase.errors.full_messages).to include("Phone can't be blank")
+        expect(@item_purchase.errors.full_messages).to include("Phone is invalid")
       end
       it "電話番号にハイフンがあると購入できない" do
         @item_purchase.phone = "123-4567-8912"

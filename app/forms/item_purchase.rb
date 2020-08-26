@@ -4,11 +4,13 @@ class ItemPurchase
   attr_accessor :token, :postal_number, :prefecture_id, :city, :address, :building, :phone, :purchase_item_id, :user_id, :item_id
 
   with_options presence: true do
-    validates :postal_number, format: { with: /\A\d{3}[-]\d{4}\z/ }   # ハイフン必須かつ7桁
+    POSTAL_NUMBER_REGEX = /\A\d{3}[-]\d{4}\z/.freeze  # ハイフン必須かつ7桁
+    validates_format_of :postal_number, with: POSTAL_NUMBER_REGEX
     validates :prefecture_id, numericality: { other_than: 0 }   # 0より大きいもの
     validates :city
     validates :address
-    validates :phone, format: { with: /\A\d{11}\z/}  # ハイフンなし、11文字以内
+    PHONE_REGEX = /\A\d{11}\z/.freeze  # ハイフンなし、11文字以内
+    validates_format_of :phone, with: PHONE_REGEX
   end
 
   def save

@@ -1,3 +1,18 @@
+# このアプリについて
+- フリマサイト（メルカリクローン）
+- 制作期間:July 30th, 2020 ~ August 27th, 2020
+
+# 制作者
+## 苑田 拓真
+
+## サイトURL (Basic認証キー)
+- ユーザー名: taku
+- パスワード: 0223
+- サイトURL: https://furima-28275.herokuapp.com/
+
+### ER図
+https://i.gyazo.com/243cb87b6ed10319e5970557a5f8ba4c.png
+
 # テーブル設計
 
 ## users テーブル

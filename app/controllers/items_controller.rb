@@ -1,6 +1,6 @@
 class ItemsController < ApplicationController
   require 'payjp'
-  before_action :set_item, only: [:show, :edit]
+  before_action :set_item, only: [:show, :edit, :update, :destroy]
 
 
   def index
@@ -31,9 +31,8 @@ class ItemsController < ApplicationController
   end
 
   def update
-    item = Item.find(params[:id])
-    item.update(item_params)
-    if item.save
+    @item.update(item_params)
+    if @item.save
       redirect_to item_path(item.id)
     else
       render :edit
@@ -41,10 +40,14 @@ class ItemsController < ApplicationController
   end
 
   def destroy
-    item = Item.find(params[:id])
-    item.destroy
-    if item.destroy
-      redirect_to root_path
+    # （とりあえず）購入済の商品は消せない（消すとエラーになる）
+    if @item.buyer_id.nil?
+      @item.destroy
+      if @item.destroy
+        redirect_to root_path
+      else
+        render :show
+      end
     else
       render :show
     end

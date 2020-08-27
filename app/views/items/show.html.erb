@@ -36,7 +36,7 @@
 
       <%# 商品が売れていない場合に表示 %>
       <%# ログインしてるユーザーが出品者ではない、かつ購入者のidが存在しなかったら表示する %>
-      <% unless current_user.id == @item.user_id && @item.buyer_id.present? %>
+      <% if current_user.id != @item.user_id  && @item.buyer_id.nil? %>
         <%= link_to '購入画面に進む', item_purchase_items_path(@item.id) ,class:"item-red-btn"%>
       <% end %>
     <% end %>
